@@ -1,0 +1,91 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Registration</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+ 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+	
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MakeMyTrip</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Book Ticket</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="search">Search Ticket</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" th:href="tickets">All Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</head>
+<body>
+	<div class="container mt-5">
+<h3> Enter Traveller Details</h3>
+	<!--<p th:text="${msg}"style="color: green;"></p>-->
+    <form action="#" th:action="@{/ticket}" method="post" th:object="${passenger}">
+												
+		<table>
+			
+		<tr>
+			<td class="fw-medium">Name:</td>					
+			<td><input type= "text" th:field= "*{name}" placeholder= "Enter your name"></td>						
+		</tr>
+		
+		<tr>
+			<td class="fw-medium">Phone Number:</tdclass="fw-medium">
+			<td><input type= "number" th:field= "*{phno}" placeholder= "Enter your phone number"></td>	
+		</tr>
+		
+		<tr>
+			<td class="fw-medium">Gender:</td>
+			<td>Male<input type= "radio" th:field= "*{gender}" value="Male"/>
+				Female<input type= "radio" th:field= "*{gender}" value="Female"></td>
+		</tr>
+		
+		<tr>
+			<td class="fw-medium">From City:</td>					
+			<td><input type= "text" th:field= "*{from}" placeholder= " Enter From City"></td>
+		</tr>
+		
+		<tr>
+			<td class="fw-medium">To City:</td>					
+			<td><input type= "text" th:field= "*{to}" placeholder= " Enter To City"></td>
+		</tr>
+	
+		<tr>
+			<td class="fw-medium">Travel Date:</td>					
+			<td><input type= "date" th:field= "*{doj}"/></td>	
+		</tr>
+		
+		<tr>
+			<td class="fw-medium">Train Number:</td>					
+			<td><input type= "text" th:field= "*{trainNum}" placeholder= "Enter Train Number"></td>
+		</tr>
+	
+		<tr>
+			<td><button type="submit"class="btn btn-primary">Book Ticket</button></td>
+		</tr>
+		
+	</table>
+</form>
+</div>
+</body>
+</html>	

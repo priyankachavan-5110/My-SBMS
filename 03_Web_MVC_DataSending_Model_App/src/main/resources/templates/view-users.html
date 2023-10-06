@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  
+	<body>
+		
+		<table class="table table-bordered table-striped table-hover" >
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</td>
+				</tr>
+			</thead>
+		<tbody>
+		<tr th:each="user:${userData}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.name}"></td>
+			<td th:text="${user.email}"></td>
+		</tr>
+		</tbody>
+		</tableclas>
+		<button type="button"onclick="alert('Press the button')">click me</button>
+	</body>	
+</html>

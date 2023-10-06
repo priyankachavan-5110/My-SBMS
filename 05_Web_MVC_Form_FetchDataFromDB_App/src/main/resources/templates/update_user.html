@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+<body>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<div align="center">
+<h2>Update User</h2>
+
+    <form action="#" th:action="@{/saveUser}" method="post" th:object="${userobj}">
+		<!--getter method called when this page loaded first time so it populate data.then called setter method to set data -->
+		<table>
+			
+		<tr>
+			<td>Id:</td>
+			<td><input type= "text" th:field= "*{id}" readonly="readonly" /><br/></td>
+		</tr>
+			
+		<tr>
+			<td>Name:</td>
+			<td><input type= "text" th:field= "*{name}" /><br/></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type= "text" th:field= "*{email}" /><br/></td>
+		</tr>
+		<tr>
+			<td>Phone Number:</td>
+			<td><input type= "text" th:field= "*{pno}" /><br/></td>
+		</tr>
+		
+		<tr>
+			<td>Password:</td>
+			<td><input type= "password" th:field= "*{password}" /><br/></td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td><input type= "radio" th:field= "*{gender}" /><br/></td>
+		</tr>
+		
+		</table>
+		<button type="submit"class="btn btn-primary")>Update User</button>
+		<a th:href="@{/users}" class="btn btn-primary">View Users</a></td>
+		</form>
+   			
+		
+</div>
+</body>
+</html>
